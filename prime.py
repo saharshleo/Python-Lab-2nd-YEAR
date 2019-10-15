@@ -1,17 +1,20 @@
-n=int(input("enter a no. "))
-num=[]
-for i in range(n):
-	num.append(i+1)
-if n==1:
-	print("neither prime nor composite")
-else:
-	for i in range(2,n):
-		for j in range(i+1,n):
-			if num[j-1]!=0 and j%i==0:
-					num[j-1]=0
-	for i in range(1,n):
-		if num[i]!=0:
-			print(i+1,end=" ")	
+def SieveOfEratosthenes(n):  
+    prime = [True for i in range(n+1)] 
+    p = 2
+    while (p * p <= n):        
+        if (prime[p] == True):               
+            for i in range(p * p, n+1, p): 
+                prime[i] = False
+        p += 1      
+    for p in range(2, n): 
+        if prime[p]: 
+            print p, 
+  
+if __name__=='__main__': 
+    n = 30
+    print "Following are the prime numbers smaller", 
+    print "than or equal to", n 
+    SieveOfEratosthenes(n) 	
 			
 			
 			
