@@ -6,8 +6,7 @@ def sum(arr,size):
 		s = arr[size-1]+sum(arr,size-1)	
 		return s
 	 
-#size = int(input("enter size:"))
-size=1
+size = int(input("enter size:"))
 arr = []
 for i in range(size):
 	arr.append(i)
